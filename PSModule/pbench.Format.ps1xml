@@ -1,0 +1,36 @@
+<Configuration>
+  <ViewDefinitions>
+    <View>
+      <Name>ProcessStatsListView</Name>
+      <ViewSelectedBy>
+        <TypeName>PBench.ProcessStats</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <PropertyName>TotalTime</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>TotalCPU</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ReadCount</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>ReadBytes</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>WriteCount</PropertyName>
+              </ListItem>
+              <ListItem>
+                <PropertyName>WriteBytes</PropertyName>
+              </ListItem>
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View> 
+  </ViewDefinitions>
+</Configuration>
