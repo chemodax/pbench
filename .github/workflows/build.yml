@@ -16,8 +16,11 @@ jobs:
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.1
 
+    - name: Restore
+      run: msbuild pbench.sln /t:restore /p:Configuration=Release /p:Platform=x86
+
     - name: Build
-      run: msbuild pbench.sln /t:build /p:Configuration=Release /p:Platform=x86
+      run: msbuild pbench.sln /t:build /p:Configuration=Release /p:Platform=x86 /p:RestorePackages=false
 
     - name: Prepare artifact
       run: |
