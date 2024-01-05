@@ -14,6 +14,16 @@
       <Component Directory="INSTALLFOLDER">
         <File Source="$(pbench.TargetPath)" Id="pbench.exe" />
       </Component>
+
+      <Component Directory="INSTALLFOLDER" Id="Path" Guid="{951D3C15-E18E-4E99-BF9B-269554DC60C7}">
+        <Environment Id="PATH"
+                     Name="PATH"
+                     Value="[INSTALLFOLDER]"
+                     Part="last"
+                     Permanent="no"
+                     Action="set"
+                     System="yes" />
+      </Component>
     </Feature>
   </Package>
 </Wix>
