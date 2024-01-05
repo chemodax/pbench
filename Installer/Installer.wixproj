@@ -3,6 +3,12 @@
     <OutDir>$(SolutionDir)_bin\$(Configuration)-$(Platform)\</OutDir>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="LICENSE.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" Version="4.0.3" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\pbench\pbench.vcxproj" />
   </ItemGroup>
 </Project>

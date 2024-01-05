@@ -1,6 +1,13 @@
-﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+
   <Package Name="pbench" Manufacturer="chemodax"
            Version="1.0.0.0" UpgradeCode="152ffe72-d7f4-4def-a466-1ff822b9d5cb">
+
+    <WixVariable Id="WixUILicenseRtf"
+                 Value="LICENSE.rtf" />
+    
+    <ui:WixUI Id="WixUI_Minimal" />
 
     <MajorUpgrade AllowDowngrades="yes" />
 
@@ -26,4 +33,5 @@
       </Component>
     </Feature>
   </Package>
+
 </Wix>
