@@ -9,6 +9,12 @@ Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "PSModule", "PSModule\PSModu
 EndProject
 Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "Installer", "Installer\Installer.wixproj", "{8F5FA89A-4551-4584-AA0C-086656EB4FC6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB5CE9DD-0F74-4C98-A346-48EA1D511670}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.build.props = Directory.build.props
+		Version.props = Version.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,5 +75,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {6FC286BE-3FC2-4C87-BB2C-F9E1F24D5591}
 	EndGlobalSection
 EndGlobal

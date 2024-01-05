@@ -1,10 +1,6 @@
 // Copyright (C) 2016-2017 Ivan Zhakov
 #include "stdafx.h"
 
-#define PBENCH_VERSION_MAJOR 0
-#define PBENCH_VERSION_MINOR 4
-#define PBENCH_VERSION_PATCH 0
-
 typedef LONG (WINAPI * NtSetTimerResolutionProc)(
     ULONG ReqRes,
     BOOL  Acquire,
