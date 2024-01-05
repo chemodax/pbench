@@ -1,0 +1,19 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="pbench" Manufacturer="chemodax"
+           Version="1.0.0.0" UpgradeCode="152ffe72-d7f4-4def-a466-1ff822b9d5cb">
+
+    <MajorUpgrade AllowDowngrades="yes" />
+
+    <MediaTemplate EmbedCab="yes" />
+
+    <StandardDirectory Id="ProgramFiles6432Folder">
+      <Directory Id="INSTALLFOLDER" Name="!(bind.Property.ProductName)" />
+    </StandardDirectory>
+
+    <Feature Id="Main">
+      <Component Directory="INSTALLFOLDER">
+        <File Source="$(pbench.TargetPath)" Id="pbench.exe" />
+      </Component>
+    </Feature>
+  </Package>
+</Wix>
