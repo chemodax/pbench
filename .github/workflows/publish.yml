@@ -50,7 +50,7 @@ jobs:
       with:
         upload_url: ${{ needs.create_release.outputs.upload_url }}
         asset_path: .\_bin\Release-x86\en-US\pbench.msi
-        asset_name: pbench-${{ github.ref }}.msi
+        asset_name: pbench-${{ github.ref_name }}.msi
         asset_content_type: application/msi
 
     - name: Upload pbench.exe to Release
