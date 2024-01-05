@@ -17,7 +17,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
 
     - name: Build
-      run: msbuild pbench.sln /t:build /p:platform=x86;configuration=Release
+      run: msbuild pbench.sln /t:build /p:Configuration=Release /p:Platform=x86
 
     - name: Prepare artifact
       run: |
