@@ -1,0 +1,17 @@
+﻿<Project Sdk="WixToolset.Sdk/4.0.3">
+  <PropertyGroup>
+    <OutputName>pbench</OutputName>
+    <OutDir>$(SolutionDir)_bin\$(Configuration)-$(Platform)\</OutDir>
+    <IntermediateOutputPath>$(SolutionDir)_bin\$(Configuration)-$(Platform)\tmp\$(MSBuildProjectName)\</IntermediateOutputPath>
+    <DefineConstants>Version=$(Version)</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="LICENSE.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" Version="4.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\pbench\pbench.vcxproj" />
+  </ItemGroup>
+</Project>
