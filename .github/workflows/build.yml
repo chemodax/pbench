@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Build
+      run: msbuild pbench.sln /t:build /t:platform=x86;configuration=Release
+
+    - name: Prepare artifact
+      run: |
+        mkdir -Path .\artifact
+        copy -Path .\_bin\Release-x86\pbench.exe -Destination .\artifact
+        copy -Path .\_bin\Release-x86\en-US\pbench.msi -Destination .\artifact
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: pbench
+        path: .\artifact
