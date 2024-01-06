@@ -21,11 +21,11 @@ pbench [OPTIONS] COMMAND [ARGS]
 
 Measure performance of `curl http://example.com` command:
 
-```
+```Batchfile
 pbench --stdout-nul curl http://example.com
 ```
 
-```
+```Console
 ==== curl http://example.com ====
 
 == Performance of curl http://example.com
