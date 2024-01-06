@@ -4,7 +4,8 @@
   <Package Name="pbench"
            Manufacturer="chemodax"
            Version="$(var.Version)"
-           UpgradeCode="152ffe72-d7f4-4def-a466-1ff822b9d5cb">
+           UpgradeCode="152ffe72-d7f4-4def-a466-1ff822b9d5cb"
+           Scope="perUserOrMachine">
 
     <WixVariable Id="WixUILicenseRtf"
                  Value="LICENSE.rtf" />
@@ -26,16 +27,29 @@
       </Component>
 
       <Component Directory="INSTALLFOLDER"
-                 Id="Path"
-                 Guid="{951D3C15-E18E-4E99-BF9B-269554DC60C7}">
+                 Id="SystemPath"
+                 Guid="{951D3C15-E18E-4E99-BF9B-269554DC60C7}"
+                 Condition="ALLUSERS=1">
 
-        <Environment Id="PATH"
-                     Name="PATH"
+        <Environment Name="PATH"
                      Value="[INSTALLFOLDER]"
                      Part="last"
                      Permanent="no"
                      Action="set"
-                     System="yes" />
+                     System="yes"/>
+      </Component>
+      
+      <Component Directory="INSTALLFOLDER"
+                 Id="UserPath"
+                 Guid="{83CFC252-9433-4DB4-9CF5-76B8C66ADA98}"
+                 Condition="NOT ALLUSERS=1">
+
+        <Environment Name="PATH"
+                     Value="[INSTALLFOLDER]"
+                     Part="last"
+                     Permanent="no"
+                     Action="set" 
+                     System="no"/>
       </Component>
     </Feature>
   </Package>
