@@ -1,6 +1,2 @@
 <Project>
-  <Import Project="Version.props" />
-  <PropertyGroup>
-    <Version>$(VersionMajor).$(VersionMinor).$(VersionPatch)</Version>
-  </PropertyGroup>
 </Project>
