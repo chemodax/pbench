@@ -6,6 +6,7 @@
     <DefineConstants>Version=$(Version)</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Directory.Build.props" />
     <None Include="LICENSE.rtf" />
   </ItemGroup>
   <ItemGroup>
