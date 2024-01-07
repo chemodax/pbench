@@ -8,6 +8,10 @@ on:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        platform: [x64, x86, ARM64]
+
     runs-on: windows-latest
 
     steps:
@@ -17,16 +21,16 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
 
     - name: Restore
-      run: msbuild pbench.sln /t:restore /p:Configuration=Release /p:Platform=x86
+      run: msbuild pbench.sln /t:restore /p:Configuration=Release /p:Platform=${{ matrix.platform }}
 
     - name: Build
-      run: msbuild pbench.sln /t:build /p:Configuration=Release /p:Platform=x86 /p:RestorePackages=false
+      run: msbuild pbench.sln /t:build /p:Configuration=Release /p:Platform=${{ matrix.platform }} /p:RestorePackages=false
 
     - name: Prepare artifact
       run: |
         mkdir -Path .\artifact
-        copy -Path .\_bin\Release-x86\pbench.exe -Destination .\artifact
-        copy -Path .\_bin\Release-x86\en-US\pbench.msi -Destination .\artifact
+        copy -Path .\_bin\Release-${{ matrix.platform }}\pbench.exe -Destination .\artifact
+        copy -Path .\_bin\Release-${{ matrix.platform }}\en-US\pbench.msi -Destination .\artifact
 
     - name: Upload build artifact
       uses: actions/upload-artifact@v3
