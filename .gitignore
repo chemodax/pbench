@@ -3,3 +3,4 @@ _bin/*
 *.user
 bin
 obj
+*.aps
