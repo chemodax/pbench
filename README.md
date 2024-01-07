@@ -5,6 +5,10 @@ process resource usage.
 
 ## Installation
 
+> [!NOTE]
+> Command prompt window should be restarted after installation to
+> find installed pbench.exe
+
 Using Windows Installer GUI:
 1. Download [latest release](https://github.com/chemodax/pbench/releases/latest)
 2. Run the installation package
