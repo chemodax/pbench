@@ -38,7 +38,7 @@
                      Action="set"
                      System="yes"/>
       </Component>
-      
+
       <Component Directory="INSTALLFOLDER"
                  Id="UserPath"
                  Guid="{83CFC252-9433-4DB4-9CF5-76B8C66ADA98}"
