@@ -1,5 +1,8 @@
 # pbench
 
+### Version 0.7.0 - Not Released
+- Minor bug fixes.
+
 ### Version 0.6.0 - 07 January 2023
 - Support per-user installation.
 
