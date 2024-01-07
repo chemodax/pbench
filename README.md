@@ -9,6 +9,12 @@ process resource usage.
 > Command prompt window should be restarted after installation to
 > find installed pbench.exe
 
+Using Windows Installer command:
+1. Run the following command from the command prompt:
+   ```
+   msiexec.exe /qb /i https://github.com/chemodax/pbench/releases/download/0.7.0/pbench-x64.msi
+   ```
+
 Using Windows Installer GUI:
 1. Download [latest release](https://github.com/chemodax/pbench/releases/latest)
 2. Run the installation package
