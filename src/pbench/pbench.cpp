@@ -129,9 +129,9 @@ CString FormatAvgMinMaxTime(const std::list<CFileTimeSpan> & times)
     if (times.size() > 1)
     {
         result.Format(L"%8s s  %8s s  %8s s",
-                      FormatTime(total.GetTimeSpan() / times.size()),
-                      FormatTime(min.GetTimeSpan()),
-                      FormatTime(max.GetTimeSpan()));
+                      FormatTime(total.GetTimeSpan() / times.size()).GetString(),
+                      FormatTime(min.GetTimeSpan()).GetString(),
+                      FormatTime(max.GetTimeSpan()).GetString());
     }
     else
     {
