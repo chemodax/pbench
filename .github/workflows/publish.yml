@@ -29,6 +29,10 @@ jobs:
   build:
     needs: create_release
 
+    strategy:
+      matrix:
+        platform: [x64, x86, ARM64]
+
     runs-on: windows-latest
 
     steps:
@@ -38,10 +42,10 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
 
     - name: Restore
-      run: msbuild pbench.sln /t:restore /p:Configuration=Release /p:Platform=x86
+      run: msbuild pbench.sln /t:restore /p:Configuration=Release /p:Platform=${{ matrix.platform }}
 
     - name: Build
-      run: msbuild pbench.sln /t:build /p:Configuration=Release /p:Platform=x86 /p:RestorePackages=false
+      run: msbuild pbench.sln /t:build /p:Configuration=Release /p:Platform=${{ matrix.platform }} /p:RestorePackages=false
 
     - name: Upload pbench.msi to Release
       uses: actions/upload-release-asset@v1
@@ -49,16 +53,17 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ needs.create_release.outputs.upload_url }}
-        asset_path: .\_bin\Release-x86\en-US\pbench.msi
-        asset_name: pbench-${{ github.ref_name }}.msi
+        asset_path: .\_bin\Release-${{ matrix.platform }}\en-US\pbench.msi
+        asset_name: pbench-${{ matrix.platform }}.msi
         asset_content_type: application/msi
 
     - name: Upload pbench.exe to Release
+      if: ${{ matrix.platform }} == 'x86'
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ needs.create_release.outputs.upload_url }}
-        asset_path: .\_bin\Release-x86\pbench.exe
+        asset_path: .\_bin\Release-${{ matrix.platform }}\pbench.exe
         asset_name: pbench.exe
         asset_content_type: application/exe
