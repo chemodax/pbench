@@ -68,7 +68,7 @@ struct AdditionalProcessInfo
     AdditionalProcessInfo(HANDLE hProcess)
         : m_hProcess(hProcess)
     {
-        DWORD dw = MAX_PATH * sizeof(WCHAR);
+        DWORD dw = MAX_PATH;
         BOOL b = QueryFullProcessImageName(hProcess, 0, m_ImageFileName.GetBuffer(MAX_PATH), &dw);
         if (b)
         {
