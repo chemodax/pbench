@@ -58,7 +58,7 @@ jobs:
         asset_content_type: application/msi
 
     - name: Upload pbench.exe to Release
-      if: ${{ matrix.platform }} == 'x86'
+      if: ${{ matrix.platform == 'x86' }}
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
