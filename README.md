@@ -3,6 +3,12 @@
 The pbench is Windows equivalent to Unix "time" command to measure
 process resource usage.
 
+## Installation
+
+Using Windows Installer GUI:
+1. Download [latest release](https://github.com/chemodax/pbench/releases/latest)
+2. Run the installation package
+
 ## Syntax
 
 ```
